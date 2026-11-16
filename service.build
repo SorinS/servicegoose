@@ -1,0 +1,8 @@
+// service's sidecar: src/service.c, the service managers' side (the
+// Windows service control manager, POSIX signals, systemctl and
+// launchctl), compiled only into programs that call it.
+c_sources = ["src/service.c"];
+c_libs_windows = ["advapi32"];
+
+// Programs, not the package's modules.
+exclude = ["examples", "test", "scripts"];
